@@ -1,0 +1,8 @@
+<ImageAsset
+    AssetName="Ocean_Sprite"
+    imageFile="ocean v1.png"
+    cellCountX="8"
+    cellCountY="8"
+    cellWidth="256"
+    cellHeight="256"
+	 />
