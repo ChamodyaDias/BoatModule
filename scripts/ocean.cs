@@ -16,7 +16,7 @@ function createOcean()
     %Ocean.Size = "100 75";
     
     // Set to the furthest Ocean layer.
-    %Ocean.SceneLayer = 31;
+    %Ocean.SceneLayer = 30;
     
     // Sets the image to use for our Ocean
     %Ocean.Animation = "BoatModule:OceanAnim";

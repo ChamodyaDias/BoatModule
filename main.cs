@@ -5,6 +5,7 @@ function BoatModule::create( %this )
     // exec("./scripts/scene.cs");
     exec("./scripts/mainboat.cs");
     exec("./scripts/ocean.cs");
+    exec("./scripts/sky.cs");
     
     echo("Hello World!");
 
@@ -16,6 +17,7 @@ function BoatModule::create( %this )
 
     createMainBoat();
     createOcean();
+    createSky();
 }
 
 function BoatModule::destroy( %this )
