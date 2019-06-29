@@ -1,0 +1,7 @@
+<AnimationAsset
+    AssetName="PlaneAnim"
+    Image="@asset=BoatModule:Plane_Sprite"
+    AnimationFrames="0 1"
+    AnimationTime="0.1"
+    AnimationCycle="true"
+     />

@@ -1,0 +1,8 @@
+<ImageAsset
+    AssetName="Plane_Sprite"
+    imageFile="plane_sprite.png"
+    cellCountX="2"
+    cellCountY="1"
+    cellWidth="443"
+    cellHeight="302"
+	 />
