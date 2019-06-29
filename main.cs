@@ -13,9 +13,12 @@ function BoatModule::create( %this )
     // createScene();
     // mySceneWindow.setScene(SandboxScene);
     SandboxScene.setDebugOn("collision", "position", "aabb");
+    // Set the scene gravity.
+    SandboxScene.setGravity( 0, -0.8 );
 
 
-    createMainPlane();
+    BoatModule.MainPlane = createMainPlane();
+
     // createOcean();
     // createSky();
 }
@@ -23,4 +26,10 @@ function BoatModule::create( %this )
 function BoatModule::destroy( %this )
 {
     // destroySceneWindow();
+}
+
+function BoatModule::onTouchDown(%this, %touchID, %worldPosition)
+{
+    echo("clicked!");
+    BoatModule.MainPlane.Position.y += "5";
 }

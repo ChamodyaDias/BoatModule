@@ -28,5 +28,8 @@ function createMainPlane()
     // %MainPlane.createEdgeCollisionShape( -50, -34.5, 50, -34.5 );   
               
     // Add the sprite to the scene.
-    SandboxScene.add( %MainPlane );    
+    SandboxScene.add( %MainPlane );  
+    return %MainPlane;
 }
+
+

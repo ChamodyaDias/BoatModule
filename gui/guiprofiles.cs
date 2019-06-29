@@ -1,1 +1,4 @@
-if(!isObject(GuiDefaultProfile)) new GuiControlProfile (GuiDefaultProfile);
+if(!isObject(GuiDefaultProfile)) new GuiControlProfile (GuiDefaultProfile)
+{
+Modal = true;   
+};
