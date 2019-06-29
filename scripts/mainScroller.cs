@@ -20,7 +20,7 @@
 // IN THE SOFTWARE.
 //-----------------------------------------------------------------------------
 
-function ScrollerToy::create( %this )
+function create( %this )
 {
     // Reset the toy.
     ScrollerToy.reset();
@@ -28,13 +28,13 @@ function ScrollerToy::create( %this )
 
 //-----------------------------------------------------------------------------
 
-function ScrollerToy::destroy( %this )
+function destroy( %this )
 {
 }
 
 //-----------------------------------------------------------------------------
 
-function ScrollerToy::reset( %this )
+function reset( %this )
 {
     // Clear the scene.
     SandboxScene.clear();
@@ -47,10 +47,12 @@ function ScrollerToy::reset( %this )
 
 //-----------------------------------------------------------------------------
 
-function ScrollerToy::createBackground( %this )
+function createBackground()
 {    
     // Create the sprite.
     %object = new Sprite();
+
+    %object.setBodyType( static );
        
     // Always try to configure a scene-object prior to adding it to a scene for best performance.
 
@@ -64,7 +66,7 @@ function ScrollerToy::createBackground( %this )
     %object.SceneLayer = 31;
     
     // Set an image.
-    %object.Image = "ToyAssets:jungleSky";
+    %object.Image = "BoatModule:jungleSky";
             
     // Add the sprite to the scene.
     SandboxScene.add( %object );    
@@ -72,14 +74,13 @@ function ScrollerToy::createBackground( %this )
 
 //-----------------------------------------------------------------------------
 
-function ScrollerToy::createFarScroller( %this )
+function createFarScroller()
 {    
     // Create the scroller.
     %object = new Scroller();
     
     // Note this scroller for the touch controls.
     ScrollerToy.FarScroller = %object;
-    
     // Always try to configure a scene-object prior to adding it to a scene for best performance.
 
     // Set the position.
@@ -89,10 +90,10 @@ function ScrollerToy::createFarScroller( %this )
     %object.Size = "100 75";
 
     // Set to the furthest background layer.
-    %object.SceneLayer = 31;
+    %object.SceneLayer = 30;
     
     // Set the scroller to use a static image.
-    %object.Image = "ToyAssets:TreeBackground2";
+    %object.Image = "BoatModule:TreeBackground2";
     
     // We don't really need to do this as the frame is set to zero by default.
     %object.Frame = 0;
@@ -109,11 +110,10 @@ function ScrollerToy::createFarScroller( %this )
 
 //-----------------------------------------------------------------------------
 
-function ScrollerToy::createNearScroller( %this )
+function createNearScroller()
 {    
     // Create the scroller.
     %object = new Scroller();
-
     // Note this scroller for the touch controls.
     ScrollerToy.NearScroller = %object;    
     
@@ -126,10 +126,10 @@ function ScrollerToy::createNearScroller( %this )
     %object.Size = "100 75";
     
     // Set to the furthest background layer.
-    %object.SceneLayer = 31;
+    %object.SceneLayer = ;
     
     // Set the scroller to use a static image.
-    %object.Image = "ToyAssets:TreeBackground1";
+    %object.Image = "BoatModule:TreeBackground1";
     
     // We don't really need to do this as the frame is set to zero by default.
     %object.Frame = 0;
@@ -146,13 +146,3 @@ function ScrollerToy::createNearScroller( %this )
 
 //-----------------------------------------------------------------------------
 
-function ScrollerToy::onTouchDown(%this, %touchID, %worldPosition)
-{
-    // Set the scrollers speed to be the distance from the farground scrollers origin.
-    // Also use the sign to control the direction of scrolling.
-    %scrollerSpeed = %worldPosition.x - ScrollerToy.FarScroller.Position.x;
-
-    // Set the scroller speeds.
-    ScrollerToy.FarScroller.ScrollX = %scrollerSpeed;
-    ScrollerToy.NearScroller.ScrollX = %scrollerSpeed * 1.5;
-}

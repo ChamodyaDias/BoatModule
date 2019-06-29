@@ -6,6 +6,7 @@ function BoatModule::create( %this )
     exec("./scripts/mainplane.cs");
     exec("./scripts/ocean.cs");
     exec("./scripts/sky.cs");
+    exec("./scripts/mainScroller.cs");
 
     echo("Hello World!");
 
@@ -19,6 +20,10 @@ function BoatModule::create( %this )
 
     BoatModule.MainPlane = createMainPlane();
     BoatModule.isTouchDown = false;
+
+createBackground();   
+    createFarScroller();
+    createNearScroller();
 
     // createOcean();
     // createSky();
