@@ -48,6 +48,9 @@ function reset( %this )
     %this.createNear4Scroller();
     %this.createNear5Scroller();
     %this.createGroundScroller();
+    %this.createFarSky1Scroller();
+    %this.createFarSky2Scroller();
+    
 }
 
 //-----------------------------------------------------------------------------
