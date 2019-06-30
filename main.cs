@@ -45,6 +45,8 @@ function BoatModule::create( %this )
     createFarSky2Scroller();
     // createOcean();
     // createSky();
+
+    BoatModule.Init_controls();
 }
 
 function BoatModule::destroy( %this )
@@ -76,4 +78,24 @@ function BoatModule::StopLiftUpPlane(%this)
 {
     BoatModule.MainPlane.setLinearDamping(0.8);
     cancel(%this.thrustschedule);
+}
+
+function BoatModule::Init_controls(%this)
+{
+//Create our new ActionMap
+new ActionMap(shipcontrols);
+
+// Press "a" to execute "PlayerShip::turnleft();"
+// Release "a" to execute "PlayerShip::stopturn();"
+
+shipcontrols.bindCmd(keyboard, "a", "BoatModule.createBullet();", "BoatModule.createBullet();");
+
+//Push our ActionMap on top of the stack
+shipcontrols.push();
+}
+
+function BoatModule::createBullet(%this)
+{
+    exec("./scripts/Bullet.cs");
+    createBullet(BoatModule.MainPlane.getPosition(),100);
 }
