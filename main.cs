@@ -21,10 +21,11 @@ function BoatModule::create( %this )
     BoatModule.MainPlane = createMainPlane();
     BoatModule.isTouchDown = false;
 
-createBackground();   
+    BoatModule.Music = "BoatModule:PlaneAudio";
+
+    createBackground();
     createFarScroller();
     createNearScroller();
-
     // createOcean();
     // createSky();
 }
@@ -47,12 +48,14 @@ function BoatModule::onTouchUp(%this, %touchID, %worldPosition)
 }
 
 
-function BoatModule::LiftUpPlane(%this){
-    BoatModule.MainPlane.setLinearVelocity(0,10);
-     %this.thrustschedule = %this.schedule(100,LiftUpPlane);
+function BoatModule::LiftUpPlane(%this)
+{
+    BoatModule.MainPlane.setLinearVelocity(0, 10);
+     %this.thrustschedule = %this.schedule(100, LiftUpPlane);
 }
 
-function BoatModule::StopLiftUpPlane(%this){
+function BoatModule::StopLiftUpPlane(%this)
+{
     BoatModule.MainPlane.setLinearDamping(0.8);
     cancel(%this.thrustschedule);
 }

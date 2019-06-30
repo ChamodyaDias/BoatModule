@@ -126,7 +126,7 @@ function createNearScroller()
     %object.Size = "100 75";
     
     // Set to the furthest background layer.
-    %object.SceneLayer = ;
+    %object.SceneLayer = 29;
     
     // Set the scroller to use a static image.
     %object.Image = "BoatModule:TreeBackground1";

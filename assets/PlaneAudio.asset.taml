@@ -1,0 +1,5 @@
+<AudioAsset
+ AssetName="PlaneAudio"
+ AudioFile="planeAudio.wav"
+ Looping="true"
+/>
