@@ -125,10 +125,10 @@ function createNear1Scroller()
     // Always try to configure a scene-object prior to adding it to a scene for best performance.
 
     // Set the position.
-    %object.Position = "0 0";
+    %object.Position = "0 -5";
 
     // Set the size.        
-    %object.Size = "100 100";
+    %object.Size = "75 85";
     
     // Set to the furthest background layer.
     %object.SceneLayer = 25;
@@ -313,7 +313,7 @@ function createGroundScroller()
     %object.Position = "0 5";
 
     // Set the size.        
-    %object.Size = "65 80";
+    %object.Size = "100 100";
     
     // Set to the furthest background layer.
     %object.SceneLayer = 28;
