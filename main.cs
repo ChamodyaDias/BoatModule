@@ -21,10 +21,14 @@ function BoatModule::create( %this )
     BoatModule.MainPlane = createMainPlane();
     BoatModule.isTouchDown = false;
 
-createBackground();   
+	createBackground();   
     createFarScroller();
-    createNearScroller();
-
+    createNear1Scroller();
+    createNear2Scroller();
+    createNear3Scroller();
+    createNear4Scroller();
+    createNear5Scroller();
+	createGroundScroller();
     // createOcean();
     // createSky();
 }

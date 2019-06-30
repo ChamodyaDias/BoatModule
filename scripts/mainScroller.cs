@@ -42,7 +42,12 @@ function reset( %this )
     // Create some scrollers.
     %this.createBackground();   
     %this.createFarScroller();
-    %this.createNearScroller();
+    %this.createNear1Scroller();
+    %this.createNear2Scroller();
+    %this.createNear3Scroller();
+    %this.createNear4Scroller();
+    %this.createNear5Scroller();
+    %this.createGroundScroller();
 }
 
 //-----------------------------------------------------------------------------
@@ -60,7 +65,7 @@ function createBackground()
     %object.Position = "0 0";
 
     // Set the size.        
-    %object.Size = "100 75";
+    %object.Size = "100 100";
     
     // Set to the furthest background layer.
     %object.SceneLayer = 31;
@@ -84,22 +89,22 @@ function createFarScroller()
     // Always try to configure a scene-object prior to adding it to a scene for best performance.
 
     // Set the position.
-    %object.Position = "0 -10";
+    %object.Position = "0 0";
 
     // Set the size.        
-    %object.Size = "100 75";
+    %object.Size = "100 100";
 
     // Set to the furthest background layer.
     %object.SceneLayer = 30;
     
     // Set the scroller to use a static image.
-    %object.Image = "BoatModule:TreeBackground2";
+    %object.Image = "BoatModule:TreeBackground6";
     
     // We don't really need to do this as the frame is set to zero by default.
     %object.Frame = 0;
 
     // Set the scroller moving in the X axis.
-    %object.ScrollX = 3;
+    %object.ScrollX = 2;
     
     // Set the scroller to only show half of the static image in the X axis.
     %object.RepeatX = 0.5;
@@ -110,7 +115,7 @@ function createFarScroller()
 
 //-----------------------------------------------------------------------------
 
-function createNearScroller()
+function createNear1Scroller()
 {    
     // Create the scroller.
     %object = new Scroller();
@@ -120,13 +125,13 @@ function createNearScroller()
     // Always try to configure a scene-object prior to adding it to a scene for best performance.
 
     // Set the position.
-    %object.Position = "0 -10";
+    %object.Position = "0 0";
 
     // Set the size.        
-    %object.Size = "100 75";
+    %object.Size = "100 100";
     
     // Set to the furthest background layer.
-    %object.SceneLayer = 29;
+    %object.SceneLayer = 25;
     
     // Set the scroller to use a static image.
     %object.Image = "BoatModule:TreeBackground1";
@@ -135,7 +140,7 @@ function createNearScroller()
     %object.Frame = 0;
     
     // Set the scroller moving in the X axis.
-    %object.ScrollX = 10;
+    %object.ScrollX = 7;
 
     // Set the scroller to only show half of the static image in the X axis.
     %object.RepeatX = 0.5;
@@ -144,5 +149,187 @@ function createNearScroller()
     SandboxScene.add( %object );    
 }
 
+
 //-----------------------------------------------------------------------------
 
+function createNear2Scroller()
+{    
+    // Create the scroller.
+    %object = new Scroller();
+    // Note this scroller for the touch controls.
+    ScrollerToy.NearScroller = %object;    
+    
+    // Always try to configure a scene-object prior to adding it to a scene for best performance.
+
+    // Set the position.
+    %object.Position = "0 0";
+
+    // Set the size.        
+    %object.Size = "100 100";
+    
+    // Set to the furthest background layer.
+    %object.SceneLayer = 26;
+    
+    // Set the scroller to use a static image.
+    %object.Image = "BoatModule:TreeBackground2";
+    
+    // We don't really need to do this as the frame is set to zero by default.
+    %object.Frame = 0;
+    
+    // Set the scroller moving in the X axis.
+    %object.ScrollX = 6;
+
+    // Set the scroller to only show half of the static image in the X axis.
+    %object.RepeatX = 0.5;
+        
+    // Add the sprite to the scene.
+    SandboxScene.add( %object );    
+}
+
+
+//-----------------------------------------------------------------------------
+
+function createNear3Scroller()
+{    
+    // Create the scroller.
+    %object = new Scroller();
+    // Note this scroller for the touch controls.
+    ScrollerToy.NearScroller = %object;    
+    
+    // Always try to configure a scene-object prior to adding it to a scene for best performance.
+
+    // Set the position.
+    %object.Position = "0 0";
+
+    // Set the size.        
+    %object.Size = "100 100";
+    
+    // Set to the furthest background layer.
+    %object.SceneLayer = 27;
+    
+    // Set the scroller to use a static image.
+    %object.Image = "BoatModule:TreeBackground3";
+    
+    // We don't really need to do this as the frame is set to zero by default.
+    %object.Frame = 0;
+    
+    // Set the scroller moving in the X axis.
+    %object.ScrollX = 5;
+
+    // Set the scroller to only show half of the static image in the X axis.
+    %object.RepeatX = 0.5;
+        
+    // Add the sprite to the scene.
+    SandboxScene.add( %object );    
+}
+
+
+//-----------------------------------------------------------------------------
+
+function createNear4Scroller()
+{    
+    // Create the scroller.
+    %object = new Scroller();
+    // Note this scroller for the touch controls.
+    ScrollerToy.NearScroller = %object;    
+    
+    // Always try to configure a scene-object prior to adding it to a scene for best performance.
+
+    // Set the position.
+    %object.Position = "0 0";
+
+    // Set the size.        
+    %object.Size = "100 100";
+    
+    // Set to the furthest background layer.
+    %object.SceneLayer = 28;
+    
+    // Set the scroller to use a static image.
+    %object.Image = "BoatModule:TreeBackground4";
+    
+    // We don't really need to do this as the frame is set to zero by default.
+    %object.Frame = 0;
+    
+    // Set the scroller moving in the X axis.
+    %object.ScrollX = 4;
+
+    // Set the scroller to only show half of the static image in the X axis.
+    %object.RepeatX = 0.5;
+        
+    // Add the sprite to the scene.
+    SandboxScene.add( %object );    
+}
+
+
+//-----------------------------------------------------------------------------
+
+function createNear5Scroller()
+{    
+    // Create the scroller.
+    %object = new Scroller();
+    // Note this scroller for the touch controls.
+    ScrollerToy.NearScroller = %object;    
+    
+    // Always try to configure a scene-object prior to adding it to a scene for best performance.
+
+    // Set the position.
+    %object.Position = "0 0";
+
+    // Set the size.        
+    %object.Size = "100 100";
+    
+    // Set to the furthest background layer.
+    %object.SceneLayer = 29;
+    
+    // Set the scroller to use a static image.
+    %object.Image = "BoatModule:TreeBackground5";
+    
+    // We don't really need to do this as the frame is set to zero by default.
+    %object.Frame = 0;
+    
+    // Set the scroller moving in the X axis.
+    %object.ScrollX = 3;
+
+    // Set the scroller to only show half of the static image in the X axis.
+    %object.RepeatX = 0.5;
+        
+    // Add the sprite to the scene.
+    SandboxScene.add( %object );    
+}
+
+
+//-----------------------------------------------------------------------------
+
+function createGroundScroller()
+{    
+    // Create the scroller.
+    %object = new Scroller();
+    // Note this scroller for the touch controls.
+    ScrollerToy.NearScroller = %object;    
+    
+    // Always try to configure a scene-object prior to adding it to a scene for best performance.
+
+    // Set the position.
+    %object.Position = "0 5";
+
+    // Set the size.        
+    %object.Size = "65 80";
+    
+    // Set to the furthest background layer.
+    %object.SceneLayer = 28;
+    
+    // Set the scroller to use a static image.
+    %object.Image = "BoatModule:ground";
+    
+    // We don't really need to do this as the frame is set to zero by default.
+    %object.Frame = 0;
+    
+    // Set the scroller moving in the X axis.
+    %object.ScrollX = 7;
+
+    // Set the scroller to only show half of the static image in the X axis.
+    %object.RepeatX = 0.5;
+        
+    // Add the sprite to the scene.
+    SandboxScene.add( %object );    
+}
