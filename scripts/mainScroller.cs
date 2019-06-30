@@ -104,7 +104,79 @@ function createFarScroller()
     %object.Frame = 0;
 
     // Set the scroller moving in the X axis.
+    %object.ScrollX = 1;
+    
+    // Set the scroller to only show half of the static image in the X axis.
+    %object.RepeatX = 0.5;
+        
+    // Add the sprite to the scene.
+    SandboxScene.add( %object );    
+}
+
+//-----------------------------------------------------------------------------
+
+function createFarSky1Scroller()
+{    
+    // Create the scroller.
+    %object = new Scroller();
+    
+    // Note this scroller for the touch controls.
+    ScrollerToy.FarScroller = %object;
+    // Always try to configure a scene-object prior to adding it to a scene for best performance.
+
+    // Set the position.
+    %object.Position = "0 0";
+
+    // Set the size.        
+    %object.Size = "100 100";
+
+    // Set to the furthest background layer.
+    %object.SceneLayer = 30;
+    
+    // Set the scroller to use a static image.
+    %object.Image = "BoatModule:sky1";
+    
+    // We don't really need to do this as the frame is set to zero by default.
+    %object.Frame = 0;
+
+    // Set the scroller moving in the X axis.
     %object.ScrollX = 2;
+    
+    // Set the scroller to only show half of the static image in the X axis.
+    %object.RepeatX = 0.5;
+        
+    // Add the sprite to the scene.
+    SandboxScene.add( %object );    
+}
+
+//-----------------------------------------------------------------------------
+
+function createFaSky2Scroller()
+{    
+    // Create the scroller.
+    %object = new Scroller();
+    
+    // Note this scroller for the touch controls.
+    ScrollerToy.FarScroller = %object;
+    // Always try to configure a scene-object prior to adding it to a scene for best performance.
+
+    // Set the position.
+    %object.Position = "0 0";
+
+    // Set the size.        
+    %object.Size = "100 100";
+
+    // Set to the furthest background layer.
+    %object.SceneLayer = 30;
+    
+    // Set the scroller to use a static image.
+    %object.Image = "BoatModule:sky2";
+    
+    // We don't really need to do this as the frame is set to zero by default.
+    %object.Frame = 0;
+
+    // Set the scroller moving in the X axis.
+    %object.ScrollX = 1;
     
     // Set the scroller to only show half of the static image in the X axis.
     %object.RepeatX = 0.5;
@@ -128,7 +200,7 @@ function createNear1Scroller()
     %object.Position = "0 -5";
 
     // Set the size.        
-    %object.Size = "75 85";
+    %object.Size = "100 100";
     
     // Set to the furthest background layer.
     %object.SceneLayer = 25;
@@ -140,7 +212,7 @@ function createNear1Scroller()
     %object.Frame = 0;
     
     // Set the scroller moving in the X axis.
-    %object.ScrollX = 7;
+    %object.ScrollX = 11;
 
     // Set the scroller to only show half of the static image in the X axis.
     %object.RepeatX = 0.5;
@@ -177,7 +249,7 @@ function createNear2Scroller()
     %object.Frame = 0;
     
     // Set the scroller moving in the X axis.
-    %object.ScrollX = 6;
+    %object.ScrollX = 9;
 
     // Set the scroller to only show half of the static image in the X axis.
     %object.RepeatX = 0.5;
@@ -214,7 +286,7 @@ function createNear3Scroller()
     %object.Frame = 0;
     
     // Set the scroller moving in the X axis.
-    %object.ScrollX = 5;
+    %object.ScrollX = 7;
 
     // Set the scroller to only show half of the static image in the X axis.
     %object.RepeatX = 0.5;
@@ -251,7 +323,7 @@ function createNear4Scroller()
     %object.Frame = 0;
     
     // Set the scroller moving in the X axis.
-    %object.ScrollX = 4;
+    %object.ScrollX = 5;
 
     // Set the scroller to only show half of the static image in the X axis.
     %object.RepeatX = 0.5;
@@ -325,7 +397,7 @@ function createGroundScroller()
     %object.Frame = 0;
     
     // Set the scroller moving in the X axis.
-    %object.ScrollX = 7;
+    %object.ScrollX = 13;
 
     // Set the scroller to only show half of the static image in the X axis.
     %object.RepeatX = 0.5;
