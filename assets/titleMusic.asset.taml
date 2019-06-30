@@ -1,0 +1,6 @@
+<AudioAsset
+    AssetName="titleMusic"
+    AssetAutoUnload="0"
+    Looping="1"
+    Streaming = "true"
+    AudioFile="Happiness.wav" />

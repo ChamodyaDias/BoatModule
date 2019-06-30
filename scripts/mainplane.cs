@@ -13,7 +13,7 @@ function createMainPlane()
 
     // Set the object's size. Notice that this corresponds to the size of our camera, which was created in
     // scenewindow.cs. The MainPlane will thus cover the entirety of our scenewindow.
-    %MainPlane.Size = "30 20";
+    %MainPlane.Size = "15 10";
     
     // Set to the furthest MainPlane layer.
     %MainPlane.SceneLayer = 1;

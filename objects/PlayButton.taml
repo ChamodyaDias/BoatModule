@@ -1,0 +1,20 @@
+<Sprite
+    SceneLayer="1"
+    Size="5 5"
+    Position="45 -30"
+    BodyType="static"
+    UseInputEvents="true"
+    Image="BoatModule:Play" >
+    <Sprite.Behaviors>
+        <ButtonBehavior />
+        <MusicBehavior />
+    </Sprite.Behaviors>
+    <Sprite.CollisionShapes>
+        <Polygon>
+            <Point>-1 -1</Point>
+            <Point>1 -1</Point>
+            <Point>1 1</Point>
+            <Point>-1 1</Point>
+        </Polygon>
+    </Sprite.CollisionShapes>
+</Sprite>

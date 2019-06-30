@@ -7,19 +7,31 @@ function BoatModule::create( %this )
     exec("./scripts/ocean.cs");
     exec("./scripts/sky.cs");
     exec("./scripts/mainScroller.cs");
+    exec("./scripts/ButtonBehavior.cs");
+    exec("./scripts/MusicBehavior.cs");
 
     echo("Hello World!");
 
     // createSceneWindow();
     // createScene();
     // mySceneWindow.setScene(SandboxScene);
-    SandboxScene.setDebugOn("collision", "position", "aabb");
+    // SandboxScene.setDebugOn("collision", "position", "aabb");
     // Set the scene gravity.
     SandboxScene.setGravity(0, -9.8);
 
 
     BoatModule.MainPlane = createMainPlane();
     BoatModule.isTouchDown = false;
+
+    // Setup default values.
+    BoatModule.Music = "BoatModule:titleMusic";
+    %music = alxPlay("BoatModule:PlaneAudio");
+
+    %play = TamlRead("./objects/PlayButton.taml");
+    SandboxScene.add(%play);
+
+     // Turn on input events for scene objects.
+    SandboxWindow.setUseObjectInputEvents(true);
 
 	createBackground();   
     createFarScroller();
@@ -37,6 +49,7 @@ function BoatModule::create( %this )
 
 function BoatModule::destroy( %this )
 {
+    alxStopAll();
     // destroySceneWindow();
 }
 
