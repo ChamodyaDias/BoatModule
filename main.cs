@@ -29,8 +29,8 @@ function BoatModule::create( %this )
     createNear4Scroller();
     createNear5Scroller();
 	createGroundScroller();
-    createFaSky1Scroller()
-    createFaSky2Scroller()
+    createFarSky1Scroller();
+    createFarSky2Scroller();
     // createOcean();
     // createSky();
 }

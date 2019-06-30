@@ -154,7 +154,7 @@ function createFarSky1Scroller()
 
 //-----------------------------------------------------------------------------
 
-function createFaSky2Scroller()
+function createFarSky2Scroller()
 {    
     // Create the scroller.
     %object = new Scroller();
@@ -170,7 +170,7 @@ function createFaSky2Scroller()
     %object.Size = "100 100";
 
     // Set to the furthest background layer.
-    %object.SceneLayer = 30;
+    %object.SceneLayer = 31;
     
     // Set the scroller to use a static image.
     %object.Image = "BoatModule:sky2";
