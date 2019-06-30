@@ -128,7 +128,7 @@ function createFarSky1Scroller()
     // Always try to configure a scene-object prior to adding it to a scene for best performance.
 
     // Set the position.
-    %object.Position = "0 0";
+    %object.Position = "0 -5";
 
     // Set the size.        
     %object.Size = "100 100";
@@ -164,7 +164,7 @@ function createFarSky2Scroller()
     // Always try to configure a scene-object prior to adding it to a scene for best performance.
 
     // Set the position.
-    %object.Position = "0 0";
+    %object.Position = "0 -5";
 
     // Set the size.        
     %object.Size = "100 100";
