@@ -12,7 +12,7 @@ function createAsteroids(%num)
     %asteroid.Position = "80" SPC getRandom(-30,30);
 
     // Set the size.  
-    %randomsize = getRandom(5,10);
+    %randomsize = getRandom(5,15);
     %asteroid.Size = %randomsize;      
 
     
