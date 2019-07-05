@@ -120,6 +120,7 @@ function Bullet::onCollision(%this, %sceneobject, %collisiondetails)
     //We create a new asteroid just like we did at the start of the game!
     //createAsteroids(1); 
     $Score.setText($NumScore);
+    echo($collisionCount);
   }
 
 }
