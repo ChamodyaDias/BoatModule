@@ -1,7 +1,7 @@
 function createBullet(%position,%speed)
 {
    // Create the sprite.
-    %Bullet = new Sprite();
+    %Bullet = new Sprite(Bullet);
     
     // Set the sprite as "static" so it is not affected by gravity.
     %Bullet.setBodyType( dynamic );
@@ -18,6 +18,9 @@ function createBullet(%position,%speed)
     
     // Set to the furthest MainPlane layer.
     %Bullet.SceneLayer = 1;
+
+    %Bullet.createPolygonBoxCollisionShape();
+    %Bullet.setCollisionGroups(20);
   
     // Create border collisions.
     // %MainPlane.createEdgeCollisionShape( -50, -37.5, -50, 37.5 );
@@ -26,10 +29,43 @@ function createBullet(%position,%speed)
     // %MainPlane.createEdgeCollisionShape( -50, -34.5, 50, -34.5 );   
               
     // Add the sprite to the scene.
+    %Bullet.setCollisionCallback( true );
     SandboxScene.add( %Bullet );  
 
     %Bullet.setLinearVelocityX(%speed);
     return %Bullet;
+}
+
+function Bullet::onCollision(%this, %sceneobject, %collisiondetails)
+{
+  echo("bullet collided on asteroid");
+    if(%sceneobject.getSceneGroup() == 20)
+  {
+    // ParticlePlayer is also derived from SceneObject, we add it just like we've added all the other
+    //objects so far
+    %explosion = new ParticlePlayer();
+
+    //We load the particle asset from our ToyAssets module
+    %explosion.Particle = "BoatModule:impactExplosion";
+
+    //We set the Particle Player's position to %Sceneobject's position
+    %explosion.setPosition(%sceneobject.getPosition());
+
+    //This Scales the particles to twice their original size
+    %explosion.setSizeScale(2);
+
+    //When we add a Particle Effect to the Scene, it automatically plays
+    SandboxScene.add(%explosion);
+
+    //We delete the asteroid
+    %sceneobject.safedelete();
+    %this.safedelete();
+
+    
+    //We create a new asteroid just like we did at the start of the game!
+    createAsteroids(1);  
+  }
+
 }
 
 

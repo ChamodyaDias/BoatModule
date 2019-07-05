@@ -1,0 +1,8 @@
+<ImageAsset
+    AssetName="Impact_ExplosionSprite"
+    imageFile="explosion.png"
+    cellCountX="8"
+    cellCountY="6"
+    cellWidth="256"
+    cellHeight="256"
+	 />

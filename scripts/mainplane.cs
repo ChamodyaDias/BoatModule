@@ -20,6 +20,8 @@ function createMainPlane()
     
     // Sets the image to use for our MainPlane
     %MainPlane.Animation = "BoatModule:PlaneAnim";
+
+    %MainPlane.createPolygonBoxCollisionShape();
   
     // Create border collisions.
     // %MainPlane.createEdgeCollisionShape( -50, -37.5, -50, 37.5 );
@@ -28,8 +30,36 @@ function createMainPlane()
     // %MainPlane.createEdgeCollisionShape( -50, -34.5, 50, -34.5 );   
               
     // Add the sprite to the scene.
+    %MainPlane.setCollisionCallback( true );
     SandboxScene.add( %MainPlane );  
     return %MainPlane;
 }
 
+function PlayerShip::onCollision(%this, %sceneobject, %collisiondetails)
+{
+  echo("collided");
+    if(%sceneobject.getSceneGroup() == 20)
+  {
+    // ParticlePlayer is also derived from SceneObject, we add it just like we've added all the other
+    //objects so far
+    %explosion = new ParticlePlayer();
 
+    //We load the particle asset from our ToyAssets module
+    %explosion.Particle = "BoatModule:impactExplosion";
+
+    //We set the Particle Player's position to %Sceneobject's position
+    %explosion.setPosition(%sceneobject.getPosition());
+
+    //This Scales the particles to twice their original size
+    %explosion.setSizeScale(2);
+
+    //When we add a Particle Effect to the Scene, it automatically plays
+    SandboxScene.add(%explosion);
+
+    //We delete the asteroid
+    %sceneobject.safedelete();
+    
+    //We create a new asteroid just like we did at the start of the game!
+  }
+
+}

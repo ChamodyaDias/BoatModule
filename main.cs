@@ -9,6 +9,7 @@ function BoatModule::create( %this )
     exec("./scripts/mainScroller.cs");
     exec("./scripts/ButtonBehavior.cs");
     exec("./scripts/MusicBehavior.cs");
+    exec("./scripts/asteroids.cs");
 
     echo("Hello World!");
 
@@ -43,10 +44,11 @@ function BoatModule::create( %this )
 	createGroundScroller();
     createFarSky1Scroller();
     createFarSky2Scroller();
+    createAsteroids(3);
     // createOcean();
     // createSky();
 
-    BoatModule.Init_controls();
+    BoatModule.Init_controls();   
 }
 
 function BoatModule::destroy( %this )
@@ -57,14 +59,16 @@ function BoatModule::destroy( %this )
 
 function BoatModule::onTouchDown(%this, %touchID, %worldPosition)
 {
+    // createAsteroids(2);
     echo("clicked!");
-    BoatModule.LiftUpPlane(%this);
+    BoatModule.createBullet();
+    // BoatModule.LiftUpPlane(%this);
 }
 
 function BoatModule::onTouchUp(%this, %touchID, %worldPosition)
 {
-    echo("click released");
-    BoatModule.StopLiftUpPlane(%this);
+    // echo("click released");
+    // BoatModule.StopLiftUpPlane(%this);
 }
 
 
@@ -80,6 +84,19 @@ function BoatModule::StopLiftUpPlane(%this)
     cancel(%this.thrustschedule);
 }
 
+
+function BoatModule::LiftDownPlane(%this)
+{
+    BoatModule.MainPlane.setLinearVelocity(0, -10);
+     %this.thrustschedule = %this.schedule(100, LiftDownPlane);
+}
+
+function BoatModule::StopLiftDownPlane(%this)
+{
+    BoatModule.MainPlane.setLinearDamping(0.8);
+    cancel(%this.thrustschedule);
+}
+
 function BoatModule::Init_controls(%this)
 {
 //Create our new ActionMap
@@ -87,7 +104,8 @@ new ActionMap(shipcontrols);
 
 // Press "a" to execute "PlayerShip::turnleft();"
 // Release "a" to execute "PlayerShip::stopturn();"
-
+shipcontrols.bindCmd(keyboard, "w", "BoatModule.LiftUpPlane();", "BoatModule.StopLiftUpPlane();");
+shipcontrols.bindCmd(keyboard, "s", "BoatModule.LiftDownPlane();", "BoatModule.StopLiftDownPlane();");
 shipcontrols.bindCmd(keyboard, "a", "BoatModule.createBullet();", "BoatModule.createBullet();");
 
 //Push our ActionMap on top of the stack

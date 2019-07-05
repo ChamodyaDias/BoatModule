@@ -75,6 +75,12 @@ function createBackground()
     
     // Set an image.
     %object.Image = "BoatModule:jungleSky";
+
+    // Create border collisions.
+    %object.createEdgeCollisionShape( -50, -37.5, -50, 37.5 );
+    // %object.createEdgeCollisionShape( 50, -37.5, 50, 37.5 );
+    %object.createEdgeCollisionShape( -50, 37.5, 50, 37.5 );
+    %object.createEdgeCollisionShape( -50, -34.5, 50, -34.5 ); 
             
     // Add the sprite to the scene.
     SandboxScene.add( %object );    
