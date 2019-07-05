@@ -44,32 +44,6 @@ function Bullet::onCollision(%this, %sceneobject, %collisiondetails)
     if(%sceneobject.getSceneGroup() == 20){
     $collisionCount+=1;
 
-    if(%sceneobject.getSize() >12 `&& $collisionCount >4){
-      $collisionCount=0;
-
-      %explosion = new ParticlePlayer();
-
-    //We load the particle asset from our ToyAssets module
-      %explosion.Particle = "BoatModule:impactExplosion";
-
-    //We set the Particle Player's position to %Sceneobject's position
-      %explosion.setPosition(%sceneobject.getPosition());
-
-    //This Scales the particles to twice their original size
-      %explosion.setSizeScale(2);
-
-    //When we add a Particle Effect to the Scene, it automatically plays
-      SandboxScene.add(%explosion);
-
-    //We delete the asteroid
-      %sceneobject.safedelete();
-    
-      $NumScore += 1; 
-      createAsteroids(1);
-    }
-    else if(%sceneobject.getSize() >6 `&& $collisionCount >2){
-      $collisionCount=0;
-
       %explosion = new ParticlePlayer();
 
     //We load the particle asset from our ToyAssets module
@@ -88,30 +62,6 @@ function Bullet::onCollision(%this, %sceneobject, %collisiondetails)
       %sceneobject.safedelete();
       $NumScore += 1; 
       createAsteroids(1);
-    }
-
-    else if(%sceneobject.getSize() >0 `&& $collisionCount >0){
-      $collisionCount=0;
-
-      %explosion = new ParticlePlayer();
-
-    //We load the particle asset from our ToyAssets module
-      %explosion.Particle = "BoatModule:impactExplosion";
-
-    //We set the Particle Player's position to %Sceneobject's position
-      %explosion.setPosition(%sceneobject.getPosition());
-
-    //This Scales the particles to twice their original size
-      %explosion.setSizeScale(2);
-
-    //When we add a Particle Effect to the Scene, it automatically plays
-      SandboxScene.add(%explosion);
-
-    //We delete the asteroid
-      %sceneobject.safedelete();
-      $NumScore += 1; 
-      createAsteroids(1);
-    }
     // ParticlePlayer is also derived from SceneObject, we add it just like we've added all the other
     //objects so far
 
