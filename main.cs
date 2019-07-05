@@ -48,6 +48,23 @@ function BoatModule::create( %this )
     // createOcean();
     // createSky();
 
+        //Title
+    $Score = new TextSprite()
+    {
+        Scene = SandboxScene;
+        Font = "ToyAssets:TrajanProFont";
+        FontSize = 6.5;
+        Text = "0";
+        Position = "0 30";
+        Size = "90 7";
+        OverflowModeX = "visible";
+        TextAlignment = "center";
+        BlendColor = "0.2 0.5 1 1";
+        BodyType = static;
+    };
+
+    $NumScore = 0;
+
     BoatModule.Init_controls();   
 }
 
@@ -103,3 +120,4 @@ function BoatModule::createBullet(%this)
     exec("./scripts/Bullet.cs");
     createBullet(BoatModule.MainPlane.getPosition(),100);
 }
+

@@ -9,7 +9,7 @@ function createMainPlane()
     // Set the object's center to coordinates 0 0 which corresponds to the center of the Scene
     // Remember that our camera is set to point to coordinates 0 0 as well
 
-    %MainPlane.Position = "0 0";
+    %MainPlane.Position = "-30 0";
 
     // Set the object's size. Notice that this corresponds to the size of our camera, which was created in
     // scenewindow.cs. The MainPlane will thus cover the entirety of our scenewindow.
