@@ -4,7 +4,7 @@ function createAsteroids(%num)
    for(%i=0;%i<%num;%i++)
    {
    // Create the sprite.
-    %asteroid = new Sprite();
+    %asteroid = new Sprite(Aster);
 
     %asteroid.setBodyType( kinematic );
        
@@ -41,10 +41,13 @@ function createAsteroids(%num)
    //You will notice that the asset file for ToyAssets:Asteroids defines 4 different images
    //in one single file. setImageFrame chooses from one of these images to add variety.
     %asteroid.setImageFrame(getRandom(0,3));
-
     // Add the sprite to the scene.
-    SandboxScene.add( %asteroid );   
-    
+    SandboxScene.add( %asteroid );  
    }
+   %asteroid.schedule(5000, createNew); 
   
+}
+
+function Aster::createNew(){
+   createAsteroids(1);
 }
