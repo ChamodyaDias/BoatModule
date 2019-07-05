@@ -84,19 +84,6 @@ function BoatModule::StopLiftUpPlane(%this)
     cancel(%this.thrustschedule);
 }
 
-
-function BoatModule::LiftDownPlane(%this)
-{
-    BoatModule.MainPlane.setLinearVelocity(0, -10);
-     %this.thrustschedule = %this.schedule(100, LiftDownPlane);
-}
-
-function BoatModule::StopLiftDownPlane(%this)
-{
-    BoatModule.MainPlane.setLinearDamping(0.8);
-    cancel(%this.thrustschedule);
-}
-
 function BoatModule::Init_controls(%this)
 {
 //Create our new ActionMap
@@ -105,7 +92,6 @@ new ActionMap(shipcontrols);
 // Press "a" to execute "PlayerShip::turnleft();"
 // Release "a" to execute "PlayerShip::stopturn();"
 shipcontrols.bindCmd(keyboard, "w", "BoatModule.LiftUpPlane();", "BoatModule.StopLiftUpPlane();");
-shipcontrols.bindCmd(keyboard, "s", "BoatModule.LiftDownPlane();", "BoatModule.StopLiftDownPlane();");
 shipcontrols.bindCmd(keyboard, "a", "BoatModule.createBullet();", "BoatModule.createBullet();");
 
 //Push our ActionMap on top of the stack
