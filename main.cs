@@ -31,37 +31,36 @@ function BoatModule::create( %this )
     %play = TamlRead("./objects/PlayButton.taml");
     SandboxScene.add(%play);
 
-     // Turn on input events for scene objects.
+    // Turn on input events for scene objects.
     SandboxWindow.setUseObjectInputEvents(true);
 
-	createBackground();   
+    createBackground();
     createFarScroller();
     createNear1Scroller();
     createNear2Scroller();
     createNear3Scroller();
     createNear4Scroller();
     createNear5Scroller();
-	createGroundScroller();
+    createGroundScroller();
     createFarSky1Scroller();
     createFarSky2Scroller();
     createAsteroids(3);
     // createOcean();
     // createSky();
-
         //Title
     $Score = new TextSprite()
-    {
-        Scene = SandboxScene;
-        Font = "ToyAssets:TrajanProFont";
-        FontSize = 6.5;
-        Text = "0";
-        Position = "0 30";
-        Size = "90 7";
-        OverflowModeX = "visible";
-        TextAlignment = "center";
-        BlendColor = "0.2 0.5 1 1";
-        BodyType = static;
-    };
+     {
+    Scene = SandboxScene;
+    Font = "ToyAssets:TrajanProFont";
+    FontSize = 6.5;
+    Text = "0";
+    Position = "0 30";
+    Size = "90 7";
+    OverflowModeX = "visible";
+    TextAlignment = "center";
+    BlendColor = "0.2 0.5 1 1";
+    BodyType = static;
+};
 
     $NumScore = 0;
 
@@ -103,23 +102,23 @@ function BoatModule::StopLiftUpPlane(%this)
 
 function BoatModule::Init_controls(%this)
 {
-//Create our new ActionMap
-new ActionMap(shipcontrols);
+    //Create our new ActionMap
+    new ActionMap(shipcontrols);
 
-// Press "a" to execute "PlayerShip::turnleft();"
-// Release "a" to execute "PlayerShip::stopturn();"
-shipcontrols.bindCmd(keyboard, "w", "BoatModule.LiftUpPlane();", "BoatModule.StopLiftUpPlane();");
-shipcontrols.bindCmd(keyboard, "a", "BoatModule.createBullet();", "BoatModule.createBullet();");
+    // Press "a" to execute "PlayerShip::turnleft();"
+    // Release "a" to execute "PlayerShip::stopturn();"
+    shipcontrols.bindCmd(keyboard, "w", "BoatModule.LiftUpPlane();", "BoatModule.StopLiftUpPlane();");
+    shipcontrols.bindCmd(keyboard, "a", "BoatModule.createBullet();", "BoatModule.createBullet();");
 
-//Push our ActionMap on top of the stack
-shipcontrols.push();
+    //Push our ActionMap on top of the stack
+    shipcontrols.push();
 }
 
 function BoatModule::createBullet(%this)
 {
     exec("./scripts/Bullet.cs");
-    %bulletPos=BoatModule.MainPlane.getPosition();
-    %bulletPos.x=%bulletPos.x+10;
-    createBullet(%bulletPos,100);
+    %bulletPos = BoatModule.MainPlane.getPosition();
+    %bulletPos.x =%bulletPos.x + 10;
+    createBullet(%bulletPos, 100);
 }
 

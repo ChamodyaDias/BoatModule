@@ -1,6 +1,5 @@
 function createMainPlane()
-{
-   // Create the sprite.
+{   // Create the sprite.
     %MainPlane = new Sprite(PlayerShip);
     
     // Set the sprite as "static" so it is not affected by gravity.
@@ -60,20 +59,21 @@ function PlayerShip::onCollision(%this, %sceneobject, %collisiondetails)
     %sceneobject.safedelete();
     
     //We create a new asteroid just like we did at the start of the game!
-  }
 
-  $GameOver= new TextSprite()
-    {
-        Scene = SandboxScene;
-        Font = "ToyAssets:TrajanProFont";
-        FontSize = 10;
-        Text = "Game Over";
-        Position = "0 0";
-        Size = "90 10";
-        OverflowModeX = "visible";
-        TextAlignment = "center";
-        BlendColor = "0.6 0.5 0.1 1";
-        BodyType = static;
-    };
+        $GameOver= new TextSprite()
+{
+    Scene = SandboxScene;
+    Font = "ToyAssets:TrajanProFont";
+    FontSize = 10;
+    Text = "#";
+    Position = "0 0";
+    Size = "90 10";
+    OverflowModeX = "visible";
+    TextAlignment = "center";
+    BlendColor = "0.6 0.5 0.1 1";
+    BodyType = static;
+};
+    $GameOver.setText("Game Over !");
+  }
 
 }
