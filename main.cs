@@ -55,7 +55,7 @@ function BoatModule::create( %this )
     Scene = SandboxScene;
     Font = "ToyAssets:TrajanProFont";
     FontSize = 6.5;
-    Text = "0";
+    Text = "Score : 0";
     Position = "0 30";
     Size = "90 7";
     OverflowModeX = "visible";
