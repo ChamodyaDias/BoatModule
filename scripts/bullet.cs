@@ -44,7 +44,7 @@ function Bullet::onCollision(%this, %sceneobject, %collisiondetails)
     if(%sceneobject.getSceneGroup() == 20){
     $collisionCount+=1;
 
-    if(%sceneobject.getSize() >6 && $collisionCount >2){
+    if(%sceneobject.getSize() >12 && $collisionCount >4){
       $collisionCount=0;
 
       %explosion = new ParticlePlayer();
@@ -67,7 +67,7 @@ function Bullet::onCollision(%this, %sceneobject, %collisiondetails)
       $NumScore += 1; 
       createAsteroids(1);
     }
-    else if(%sceneobject.getSize() >12 && $collisionCount >4){
+    else if(%sceneobject.getSize() >6 && $collisionCount >2){
       $collisionCount=0;
 
       %explosion = new ParticlePlayer();
@@ -90,7 +90,7 @@ function Bullet::onCollision(%this, %sceneobject, %collisiondetails)
       createAsteroids(1);
     }
 
-    else if(%sceneobject.getSize() <=6 && $collisionCount >0){
+    else if(%sceneobject.getSize() >0 && $collisionCount >0){
       $collisionCount=0;
 
       %explosion = new ParticlePlayer();
