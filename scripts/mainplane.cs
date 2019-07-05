@@ -74,6 +74,8 @@ function PlayerShip::onCollision(%this, %sceneobject, %collisiondetails)
     BodyType = static;
 };
     $GameOver.setText("Game Over !");
+
+    %this.safedelete();
   }
 
 }
