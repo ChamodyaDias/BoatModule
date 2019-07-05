@@ -62,4 +62,18 @@ function PlayerShip::onCollision(%this, %sceneobject, %collisiondetails)
     //We create a new asteroid just like we did at the start of the game!
   }
 
+  $GameOver= new TextSprite()
+    {
+        Scene = SandboxScene;
+        Font = "ToyAssets:TrajanProFont";
+        FontSize = 10;
+        Text = "Game Over";
+        Position = "0 0";
+        Size = "90 10";
+        OverflowModeX = "visible";
+        TextAlignment = "center";
+        BlendColor = "0.6 0.5 0.1 1";
+        BodyType = static;
+    };
+
 }
