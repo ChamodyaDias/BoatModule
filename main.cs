@@ -65,7 +65,7 @@ function BoatModule::create( %this )
 
     $NumScore = 0;
 
-    BoatModule.Init_controls();   
+    BoatModule.Init_controls();  
 }
 
 function BoatModule::destroy( %this )
@@ -118,6 +118,8 @@ shipcontrols.push();
 function BoatModule::createBullet(%this)
 {
     exec("./scripts/Bullet.cs");
-    createBullet(BoatModule.MainPlane.getPosition(),100);
+    %bulletPos=BoatModule.MainPlane.getPosition();
+    %bulletPos.x=%bulletPos.x+10;
+    createBullet(%bulletPos,100);
 }
 
