@@ -44,7 +44,9 @@ function BoatModule::create( %this )
     createGroundScroller();
     createFarSky1Scroller();
     createFarSky2Scroller();
-    createAsteroids(3);
+    createAsteroids(4);
+
+    schedule(100,0,createAsteroids,2);
     // createOcean();
     // createSky();
         //Title
